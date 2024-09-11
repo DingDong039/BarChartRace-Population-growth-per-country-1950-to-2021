@@ -169,7 +169,7 @@ function App() {
 
   return (
     <>
-      <div className="container w-full mx-auto px-4">
+      <div className="w-full mx-auto px-4">
         <div className="py-3">
           <h1 className="font-bold text-center text-4xl">
             Population growth per country 1950 to 2021
@@ -212,8 +212,7 @@ function App() {
           </span>
         </div>
         {/* ChartRace Population */}
-        <div className="w-full">
-          {/* {chartData.map((item) => (
+        {/* {chartData.map((item) => (
             <div
               key={item.id}
               className="flex items-center justify-between mb-2"
@@ -228,12 +227,11 @@ function App() {
               <span>{formatNumber(item.value)}</span>
             </div>
           ))} */}
-          {chartData && chartData.length > 0 ? (
-            <ResponsiveChart chartData={chartData} />
-          ) : (
-            <div>No chart data available</div>
-          )}
-        </div>
+        {chartData && chartData.length > 0 ? (
+          <ResponsiveChart chartData={chartData} />
+        ) : (
+          <div>No chart data available</div>
+        )}
       </div>
     </>
   );
