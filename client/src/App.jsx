@@ -8,7 +8,7 @@ import ResponsiveChart from "./components/ChartRace";
 function App() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [yearIndex, setYearIndex] = useState(0);
+  const [yearIndex, setYearIndex] = useState(1950);
   const [colorMap, setColorMap] = useState({});
   const [selectedCountries, setSelectedCountries] = useState([]);
 
@@ -195,12 +195,6 @@ function App() {
             </button>
           ))}
         </div>
-        <div>
-          <h1 className="font-bold text-center text-4xl">{years[yearIndex]}</h1>
-          <h1 className="text-center text-xl font-medium text-slate-600">
-            Total: {formatNumber(totalPopulation)}
-          </h1>
-        </div>
         {/* Progress Bar */}
         <div className="w-full h-6 bg-gray-300 rounded mb-4 relative">
           <div
@@ -227,11 +221,21 @@ function App() {
               <span>{formatNumber(item.value)}</span>
             </div>
           ))} */}
-        {chartData && chartData.length > 0 ? (
-          <ResponsiveChart chartData={chartData} />
-        ) : (
-          <div>No chart data available</div>
-        )}
+        <div className="relative w-full">
+          <div className="absolute right-10 bottom-5 z-10">
+            <h1 className="font-bold text-center text-4xl">
+              {years[yearIndex]}
+            </h1>
+            <h1 className="text-center text-xl font-medium text-slate-600">
+              Total: {formatNumber(totalPopulation)}
+            </h1>
+          </div>
+          {chartData && chartData.length > 0 ? (
+            <ResponsiveChart chartData={chartData} />
+          ) : (
+            <div>No chart data available</div>
+          )}
+        </div>
       </div>
     </>
   );

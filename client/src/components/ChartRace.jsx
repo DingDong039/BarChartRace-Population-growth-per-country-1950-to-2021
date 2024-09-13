@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import ChartRace from "react-chart-race";
 
 const ResponsiveChart = ({ chartData }) => {
-  const [chartWidth, setChartWidth] = useState(window.innerWidth * 1);
+  const [chartWidth, setChartWidth] = useState(window.innerWidth * 0.98);
 
   useEffect(() => {
     // Resize chart when window is resized
     const handleResize = () => {
-      const newWidth = window.innerWidth * 1;
+      const newWidth = window.innerWidth * 0.98;
       setChartWidth(newWidth);
     };
 
@@ -20,7 +20,7 @@ const ResponsiveChart = ({ chartData }) => {
     <div className="w-full">
       <ChartRace
         data={chartData}
-        backgroundColor="#f5f5f5"
+        backgroundColor="#ffffff"
         width={chartWidth}
         padding={window.innerWidth > 768 ? 20 : 10} 
         itemHeight={window.innerWidth > 768 ? 30 : 35} 
