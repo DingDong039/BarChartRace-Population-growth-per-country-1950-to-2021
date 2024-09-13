@@ -13,7 +13,11 @@ function App() {
   const [selectedCountries, setSelectedCountries] = useState([]);
 
   const dataUrl = "population-and-demography.csv"; // CSV path Public folder
-  const formatNumber = (number) => number.toLocaleString();
+  const formatNumber = (number) =>
+    number.toLocaleString("th-TH",{
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }); // Format number
 
   const getRandomColor = () => {
     const letters = "0123456789ABCDEF";
@@ -207,22 +211,19 @@ function App() {
         </div>
         {/* ChartRace Population */}
         {/* {chartData.map((item) => (
-            <div
-              key={item.id}
-              className="flex items-center justify-between mb-2"
-            >
-              <div className="flex items-center space-x-2">
-                <div
-                  className="w-4 h-4 rounded-full"
-                  style={{ backgroundColor: item.color }}
-                />
-                <span>{item.title}</span>
-              </div>
-              <span>{formatNumber(item.value)}</span>
+          <div key={item.id} className="flex items-center justify-between mb-2">
+            <div className="flex items-center space-x-2">
+              <div
+                className="w-4 h-4 rounded-full"
+                style={{ backgroundColor: item.color }}
+              />
+              <span>{item.title}</span>
             </div>
-          ))} */}
+            <span>{formatNumber(item.value)}</span>
+          </div>
+        ))} */}
         <div className="relative w-full">
-          <div className="absolute right-10 bottom-5 z-10">
+          <div className="absolute right-5 bottom-5 z-10">
             <h1 className="font-bold text-center text-4xl">
               {years[yearIndex]}
             </h1>
