@@ -6,7 +6,7 @@ by CSV file
 ```
 
 # Live Vercel Cloud
-https://bit.ly/3ZrkWpb
+bar-chart-race-population-growth-per-country-1950-34y4tfj4x.vercel.app
 
 # Run locally
 ```
